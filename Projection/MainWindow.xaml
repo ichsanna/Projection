@@ -1,0 +1,22 @@
+﻿<Window x:Class="Projection.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:h="http://helix-toolkit.org/wpf"
+        xmlns:local="clr-namespace:Projection"
+        mc:Ignorable="d"
+        Title="3D Transformation" Width="1280" Height="720" >
+
+    <Grid VerticalAlignment="Top">
+        <Grid VerticalAlignment="Top" Height="490">
+            <h:HelixViewport3D x:Name="viewport" ShowCoordinateSystem="True" Margin="0,0,-0.4,0">
+                <h:SunLight/>
+                <h:Teapot Position="2 2 2"/>
+                <ModelVisual3D x:Name="placedobjects"/>
+                <h:GridLinesVisual3D Width="128" Length="128" MinorDistance="1" MajorDistance="1" Thickness="0.01"/>
+                <h:EllipsoidVisual3D RadiusX="1" RadiusY="2" RadiusZ="3" Center="5 5 5"/>
+            </h:HelixViewport3D>
+        </Grid>
+    </Grid>
+</Window>
