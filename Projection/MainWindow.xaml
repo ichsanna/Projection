@@ -28,10 +28,12 @@
         <TextBox x:Name="TextBox_posisiobjekx" HorizontalAlignment="Left" Height="23" Margin="232,589,0,-73.6" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
         <Label Content="X:" HorizontalAlignment="Left" Margin="208,586,0,-73.6" VerticalAlignment="Top"/>
         <Button x:Name="Button_buatobjek" Content="Buat Objek" HorizontalAlignment="Left" Margin="26,645,0,-137.6" VerticalAlignment="Top" Width="95" Click="Button_buatobjek_Click" Height="31"/>
-        <TextBox x:Name="TextBox_titiklenyapz_Copy" HorizontalAlignment="Left" Height="23" Margin="232,617,0,-101.6" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
-        <Label Content="Panjang sisi lantai rumah:" HorizontalAlignment="Left" Margin="26,614,0,-101.6" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBox_panjangrumahx" HorizontalAlignment="Left" Height="23" Margin="232,617,0,-101.6" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <Label Content="Panjang sisi rumah:" HorizontalAlignment="Left" Margin="26,614,0,-101.6" VerticalAlignment="Top"/>
         <Label Content="Y:" HorizontalAlignment="Left" Margin="274,614,0,-101.6" VerticalAlignment="Top"/>
         <Label Content="X:" HorizontalAlignment="Left" Margin="208,614,0,-101.6" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBox_titiklenyapz_Copy1" HorizontalAlignment="Left" Height="23" Margin="298,617,0,-101.6" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <TextBox x:Name="TextBox_panjangrumahy" HorizontalAlignment="Left" Height="23" Margin="298,617,0,-101.6" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <TextBox x:Name="TextBox_panjangrumahz" HorizontalAlignment="Left" Height="23" Margin="364,617,0,-101.6" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <Label Content="Z:" HorizontalAlignment="Left" Margin="340,614,0,-101.6" VerticalAlignment="Top"/>
     </Grid>
 </Window>

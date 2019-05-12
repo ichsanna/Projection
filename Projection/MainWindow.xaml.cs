@@ -54,24 +54,24 @@ namespace Projection
         {
             InitializeComponent();
             gambarsumbu();
-            koordinatrumah(0,0,0);
+            koordinatrumah(0, 0, 0, 0, 0, 0);
         }
-        private void koordinatrumah(double x, double y, double z)
+        private void koordinatrumah(double x, double y, double z, double px, double py, double pz)
         {
-            titik[0] = new Point3D(0, 0, 0);
-            titik[1] = new Point3D(5, 0, 0);
-            titik[2] = new Point3D(5, 8, 0);
-            titik[3] = new Point3D(0, 8, 0);
-            titik[4] = new Point3D(0, 0, 3);
-            titik[5] = new Point3D(5, 0, 3);
-            titik[6] = new Point3D(5, 8, 3);
-            titik[7] = new Point3D(0, 8, 3);
-            titik[8] = new Point3D(2.5, 0, 5);
-            titik[9] = new Point3D(2.5, 8, 5);
-            titik[10] = new Point3D(3, 0, 0);
-            titik[11] = new Point3D(3, 0, 2);
-            titik[12] = new Point3D(4, 0, 2);
-            titik[13] = new Point3D(4, 0, 0);
+            titik[0] = new Point3D(x - (px / 2), y - (py / 2), z);
+            titik[1] = new Point3D(x + (px / 2), y - (py / 2), z);
+            titik[2] = new Point3D(x + (px / 2), y + (py / 2), z);
+            titik[3] = new Point3D(x - (px / 2), y + (py / 2), z);
+            titik[4] = new Point3D(x - (px / 2), y - (py / 2), z + (pz / 2));
+            titik[5] = new Point3D(x + (px / 2), y - (py / 2), z + (pz / 2));
+            titik[6] = new Point3D(x + (px / 2), y + (py / 2), z + (pz / 2));
+            titik[7] = new Point3D(x - (px / 2), y + (py / 2), z + (pz / 2));
+            titik[8] = new Point3D(x, y - (py / 2), z + pz);
+            titik[9] = new Point3D(x, y + (py / 2), z + pz);
+            titik[10] = new Point3D(x + (px / 6), y - (py / 2), z);
+            titik[11] = new Point3D(x + (px / 6), y - (py / 2), z + (pz / 3));
+            titik[12] = new Point3D(x + (px / 3), y - (py / 2), z + (pz / 3));
+            titik[13] = new Point3D(x + (px / 3), y - (py / 2), z);
             gambarrumah();
         }
         private void gambarsumbu()
@@ -141,7 +141,7 @@ namespace Projection
                 Geometry = titiklenyap.ToMesh(true),
                 Material = MaterialHelper.CreateMaterial(Colors.Yellow)
             });
-            koordinatrumah(Convert.ToDouble(TextBox_posisiobjekx.Text), Convert.ToDouble(TextBox_posisiobjeky.Text), Convert.ToDouble(TextBox_posisiobjekz.Text));
+            koordinatrumah(Convert.ToDouble(TextBox_posisiobjekx.Text), Convert.ToDouble(TextBox_posisiobjeky.Text), Convert.ToDouble(TextBox_posisiobjekz.Text), Convert.ToDouble(TextBox_panjangrumahx.Text), Convert.ToDouble(TextBox_panjangrumahy.Text), Convert.ToDouble(TextBox_panjangrumahz.Text));
         }
     }
 }
