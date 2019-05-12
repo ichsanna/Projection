@@ -34,7 +34,11 @@ namespace Projection
             {0,0,0,0},
             {0,0,0,0}
         };
-        Point3D[] titik = new Point3D[10] {
+        Point3D[] titik = new Point3D[14] {
+                new Point3D(0,0,0),
+                new Point3D(0,0,0),
+                new Point3D(0,0,0),
+                new Point3D(0,0,0),
                 new Point3D(0,0,0),
                 new Point3D(0,0,0),
                 new Point3D(0,0,0),
@@ -57,14 +61,18 @@ namespace Projection
         {
             titik[0] = new Point3D(0, 0, 0);
             titik[1] = new Point3D(5, 0, 0);
-            titik[2] = new Point3D(5, 5, 0);
-            titik[3] = new Point3D(0, 5, 0);
+            titik[2] = new Point3D(5, 8, 0);
+            titik[3] = new Point3D(0, 8, 0);
             titik[4] = new Point3D(0, 0, 3);
             titik[5] = new Point3D(5, 0, 3);
-            titik[6] = new Point3D(5, 5, 3);
-            titik[7] = new Point3D(0, 5, 3);
+            titik[6] = new Point3D(5, 8, 3);
+            titik[7] = new Point3D(0, 8, 3);
             titik[8] = new Point3D(2.5, 0, 5);
-            titik[9] = new Point3D(2.5, 5, 5);
+            titik[9] = new Point3D(2.5, 8, 5);
+            titik[10] = new Point3D(3, 0, 0);
+            titik[11] = new Point3D(3, 0, 2);
+            titik[12] = new Point3D(4, 0, 2);
+            titik[13] = new Point3D(4, 0, 0);
         }
         private void gambarsumbu()
         {
@@ -111,6 +119,9 @@ namespace Projection
             kerangkarumah.AddPipe(titik[6], titik[9], 0, 0.2, 90);
             kerangkarumah.AddPipe(titik[7], titik[9], 0, 0.2, 90);
             kerangkarumah.AddPipe(titik[9], titik[8], 0, 0.2, 90);
+            kerangkarumah.AddPipe(titik[10], titik[11], 0, 0.2, 90);
+            kerangkarumah.AddPipe(titik[11], titik[12], 0, 0.2, 90);
+            kerangkarumah.AddPipe(titik[12], titik[13], 0, 0.2, 90);
             objects.Children.Add(new GeometryModel3D
             {
                 Geometry = kerangkarumah.ToMesh(true),
