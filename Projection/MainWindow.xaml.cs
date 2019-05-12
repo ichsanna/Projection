@@ -27,6 +27,7 @@ namespace Projection
         {
             InitializeComponent();
             gambarsumbu();
+            gambarrumah();
         }
         private void gambarsumbu()
         {
@@ -50,6 +51,32 @@ namespace Projection
             {
                 Geometry = sumbuz.ToMesh(true),
                 Material = MaterialHelper.CreateMaterial(Colors.RoyalBlue)
+            });
+            placedobjects.Content = objects;
+        }
+        private void gambarrumah()
+        {
+            var kerangkarumah = new MeshBuilder(false, false);
+            kerangkarumah.AddPipe(new Point3D(0, 0, 0), new Point3D(5, 0, 0), 0, 0.5, 90);
+            kerangkarumah.AddPipe(new Point3D(5, 0, 0), new Point3D(5, 5, 0), 0, 0.5, 90);
+            kerangkarumah.AddPipe(new Point3D(5, 5, 0), new Point3D(0, 5, 0), 0, 0.5, 90);
+            kerangkarumah.AddPipe(new Point3D(0, 5, 0), new Point3D(0, 0, 0), 0, 0.5, 90);
+            kerangkarumah.AddPipe(new Point3D(0, 0, 3), new Point3D(5, 0, 3), 0, 0.5, 90);
+            kerangkarumah.AddPipe(new Point3D(5, 0, 3), new Point3D(5, 5, 3), 0, 0.5, 90);
+            kerangkarumah.AddPipe(new Point3D(5, 5, 3), new Point3D(0, 5, 3), 0, 0.5, 90);
+            kerangkarumah.AddPipe(new Point3D(0, 5, 3), new Point3D(0, 0, 3), 0, 0.5, 90);
+            kerangkarumah.AddPipe(new Point3D(0, 0, 0), new Point3D(0, 0, 3), 0, 0.5, 90);
+            kerangkarumah.AddPipe(new Point3D(5, 0, 0), new Point3D(5, 0, 3), 0, 0.5, 90);
+            kerangkarumah.AddPipe(new Point3D(0, 5, 0), new Point3D(0, 5, 3), 0, 0.5, 90);
+            kerangkarumah.AddPipe(new Point3D(5, 5, 0), new Point3D(5, 5, 3), 0, 0.5, 90);
+            kerangkarumah.AddPipe(new Point3D(0, 0, 3), new Point3D(2.5, 2.5, 5), 0, 0.5, 90);
+            kerangkarumah.AddPipe(new Point3D(5, 0, 3), new Point3D(2.5, 2.5, 5), 0, 0.5, 90);
+            kerangkarumah.AddPipe(new Point3D(5, 5, 3), new Point3D(2.5, 2.5, 5), 0, 0.5, 90);
+            kerangkarumah.AddPipe(new Point3D(0, 5, 3), new Point3D(2.5, 2.5, 5), 0, 0.5, 90);
+            objects.Children.Add(new GeometryModel3D
+            {
+                Geometry = kerangkarumah.ToMesh(true),
+                Material = MaterialHelper.CreateMaterial(Colors.DarkBlue)
             });
             placedobjects.Content = objects;
         }
