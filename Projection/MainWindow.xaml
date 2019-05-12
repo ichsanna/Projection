@@ -6,7 +6,7 @@
         xmlns:h="http://helix-toolkit.org/wpf"
         xmlns:local="clr-namespace:Projection"
         mc:Ignorable="d"
-        Title="3D Transformation" Width="1280" Height="720" >
+        Title="3D Transformation" Width="960" Height="720" >
 
     <Grid VerticalAlignment="Top">
         <Grid VerticalAlignment="Top" Height="490">
@@ -18,6 +18,14 @@
                 <h:GridLinesVisual3D Width="128" Length="128" MinorDistance="1" MajorDistance="1" Thickness="0.01"/>
             </h:HelixViewport3D>
         </Grid>
-        <TextBox x:Name="TextBox_titikz" HorizontalAlignment="Left" Height="23" Margin="17,504,0,-37.4" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <TextBox x:Name="TextBox_titiklenyapz" HorizontalAlignment="Left" Height="23" Margin="193,507,0,-14.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <Label Content="Posisi Titik lenyap (z):" HorizontalAlignment="Left" Margin="26,504,0,-14.8" VerticalAlignment="Top"/>
+        <Label Content="Posisi titik tengah objek:" HorizontalAlignment="Left" Margin="26,535,0,-45.8" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBox_posisiobjekz" HorizontalAlignment="Left" Height="23" Margin="193,600,0,-107.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <Label Content="Z:" HorizontalAlignment="Left" Margin="169,597,0,-107.8" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBox_posisiobjeky" HorizontalAlignment="Left" Height="23" Margin="193,569,0,-76.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <Label Content="Y:" HorizontalAlignment="Left" Margin="169,566,0,-76.8" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBox_posisiobjekx" HorizontalAlignment="Left" Height="23" Margin="193,538,0,-45.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <Label Content="X:" HorizontalAlignment="Left" Margin="169,535,0,-45.8" VerticalAlignment="Top"/>
     </Grid>
 </Window>
