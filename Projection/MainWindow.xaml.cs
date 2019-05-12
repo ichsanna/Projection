@@ -54,10 +54,9 @@ namespace Projection
         {
             InitializeComponent();
             gambarsumbu();
-            koordinatrumah();
-            gambarrumah();
+            koordinatrumah(0,0,0);
         }
-        private void koordinatrumah()
+        private void koordinatrumah(double x, double y, double z)
         {
             titik[0] = new Point3D(0, 0, 0);
             titik[1] = new Point3D(5, 0, 0);
@@ -73,6 +72,7 @@ namespace Projection
             titik[11] = new Point3D(3, 0, 2);
             titik[12] = new Point3D(4, 0, 2);
             titik[13] = new Point3D(4, 0, 0);
+            gambarrumah();
         }
         private void gambarsumbu()
         {
@@ -130,6 +130,18 @@ namespace Projection
             placedobjects.Children.Clear();
             objects.Children.Add(sumbu);
             placedobjects.Content = objects;
+        }
+
+        private void Button_buatobjek_Click(object sender, RoutedEventArgs e)
+        {
+            var titiklenyap = new MeshBuilder(false, false);
+            titiklenyap.AddEllipsoid(new Point3D(0, 0, Convert.ToDouble(TextBox_titiklenyapz.Text)), 0.2, 0.2, 0.2);
+            objects.Children.Add(new GeometryModel3D
+            {
+                Geometry = titiklenyap.ToMesh(true),
+                Material = MaterialHelper.CreateMaterial(Colors.Yellow)
+            });
+            koordinatrumah(Convert.ToDouble(TextBox_posisiobjekx.Text), Convert.ToDouble(TextBox_posisiobjeky.Text), Convert.ToDouble(TextBox_posisiobjekz.Text));
         }
     }
 }
