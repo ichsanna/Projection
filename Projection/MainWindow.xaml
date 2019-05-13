@@ -6,7 +6,7 @@
         xmlns:h="http://helix-toolkit.org/wpf"
         xmlns:local="clr-namespace:Projection"
         mc:Ignorable="d"
-        Title="Proyeksi 1 Titik Lenyap" Width="960" Height="720" >
+        Title="Proyeksi 1 Titik Lenyap" Width="1150" Height="720" >
 
     <Grid VerticalAlignment="Top">
         <Grid>
@@ -18,22 +18,71 @@
                 <h:GridLinesVisual3D Width="200" Length="200" MinorDistance="1" MajorDistance="1" Thickness="0.01"/>
             </h:HelixViewport3D>
         </Grid>
-        <TextBox x:Name="TextBox_titiklenyapz" HorizontalAlignment="Left" Height="23" Margin="232,561,0,-45.6" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
-        <Label Content="Posisi Titik lenyap (z):" HorizontalAlignment="Left" Margin="26,558,0,-45.6" VerticalAlignment="Top"/>
-        <Label Content="Posisi titik pusat lantai rumah:" HorizontalAlignment="Left" Margin="26,586,0,-73.6" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBox_posisiobjekz" HorizontalAlignment="Left" Height="23" Margin="364,589,0,-73.6" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
-        <Label Content="Z:" HorizontalAlignment="Left" Margin="340,586,0,-73.6" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBox_posisiobjeky" HorizontalAlignment="Left" Height="23" Margin="298,589,0,-73.6" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
-        <Label Content="Y:" HorizontalAlignment="Left" Margin="274,586,0,-73.6" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBox_posisiobjekx" HorizontalAlignment="Left" Height="23" Margin="232,589,0,-73.6" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
-        <Label Content="X:" HorizontalAlignment="Left" Margin="208,586,0,-73.6" VerticalAlignment="Top"/>
-        <Button x:Name="Button_buatobjek" Content="Buat Objek" HorizontalAlignment="Left" Margin="26,645,0,-137.6" VerticalAlignment="Top" Width="95" Click="Button_buatobjek_Click" Height="31"/>
-        <TextBox x:Name="TextBox_panjangrumahx" HorizontalAlignment="Left" Height="23" Margin="232,617,0,-101.6" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
-        <Label Content="Panjang sisi rumah:" HorizontalAlignment="Left" Margin="26,614,0,-101.6" VerticalAlignment="Top"/>
-        <Label Content="Y:" HorizontalAlignment="Left" Margin="274,614,0,-101.6" VerticalAlignment="Top"/>
-        <Label Content="X:" HorizontalAlignment="Left" Margin="208,614,0,-101.6" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBox_panjangrumahy" HorizontalAlignment="Left" Height="23" Margin="298,617,0,-101.6" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
-        <TextBox x:Name="TextBox_panjangrumahz" HorizontalAlignment="Left" Height="23" Margin="364,617,0,-101.6" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
-        <Label Content="Z:" HorizontalAlignment="Left" Margin="340,614,0,-101.6" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBox_titiklenyapz" HorizontalAlignment="Left" Height="23" Margin="217,557,0,-40.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <Label Content="Posisi Titik lenyap (z):" HorizontalAlignment="Left" Margin="11,554,0,-40.8" VerticalAlignment="Top"/>
+        <Label Content="Posisi titik pusat lantai rumah:" HorizontalAlignment="Left" Margin="11,582,0,-68.8" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBox_posisiobjekz" HorizontalAlignment="Left" Height="23" Margin="349,585,0,-68.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <Label Content="Z:" HorizontalAlignment="Left" Margin="325,582,0,-68.8" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBox_posisiobjeky" HorizontalAlignment="Left" Height="23" Margin="283,585,0,-68.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <Label Content="Y:" HorizontalAlignment="Left" Margin="259,582,0,-68.8" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBox_posisiobjekx" HorizontalAlignment="Left" Height="23" Margin="217,585,0,-68.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <Label Content="X:" HorizontalAlignment="Left" Margin="193,582,0,-68.8" VerticalAlignment="Top"/>
+        <Button x:Name="Button_buatobjek" Content="Buat Objek" HorizontalAlignment="Left" Margin="291,644,0,-135.8" VerticalAlignment="Top" Width="95" Click="Button_buatobjek_Click" Height="31"/>
+        <TextBox x:Name="TextBox_panjangrumahx" HorizontalAlignment="Left" Height="23" Margin="217,613,0,-96.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <Label Content="Panjang sisi rumah:" HorizontalAlignment="Left" Margin="11,610,0,-96.8" VerticalAlignment="Top"/>
+        <Label Content="Y:" HorizontalAlignment="Left" Margin="259,610,0,-96.8" VerticalAlignment="Top"/>
+        <Label Content="X:" HorizontalAlignment="Left" Margin="193,610,0,-96.8" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBox_panjangrumahy" HorizontalAlignment="Left" Height="23" Margin="283,613,0,-96.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <TextBox x:Name="TextBox_panjangrumahz" HorizontalAlignment="Left" Height="23" Margin="349,613,0,-96.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <Label Content="Z:" HorizontalAlignment="Left" Margin="325,610,0,-96.8" VerticalAlignment="Top"/>
+        <Separator HorizontalAlignment="Left" Height="1" Margin="328,615,0,-76.8" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
+        <TextBox x:Name="TextBox_titiklenyapz_Copy" HorizontalAlignment="Left" Height="23" Margin="444,585,0,-68.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <Label Content="Posisi Objek (z)" HorizontalAlignment="Left" Margin="416,554,0,-40.8" VerticalAlignment="Top"/>
+        <Button x:Name="Button_ubahposisi" Content="Ubah Posisi" HorizontalAlignment="Left" Margin="414,616,0,-107.8" VerticalAlignment="Top" Width="95" Click="Button_ubahposisi_Click" Height="31"/>
+        <Separator HorizontalAlignment="Left" Height="1" Margin="443,615,0,-76.8" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
+        <Label Content="Posisi titik" HorizontalAlignment="Left" Margin="703,553,0,-39.8" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBox_titiklenyapz_Copy1" HorizontalAlignment="Left" Height="23" Margin="539,585,0,-68.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="75" TextChanged="TextBox_titiklenyapz_Copy1_TextChanged"/>
+        <TextBox x:Name="TextBox_titiklenyapz_Copy2" HorizontalAlignment="Left" Height="23" Margin="619,585,0,-68.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="TextBox_titiklenyapz_Copy3" HorizontalAlignment="Left" Height="23" Margin="699,585,0,-68.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="74"/>
+        <TextBox x:Name="TextBox_titiklenyapz_Copy4" HorizontalAlignment="Left" Height="23" Margin="778,585,0,-68.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="TextBox_titiklenyapz_Copy5" HorizontalAlignment="Left" Height="23" Margin="858,585,0,-68.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="74"/>
+        <TextBox x:Name="TextBox_titiklenyapz_Copy6" HorizontalAlignment="Left" Height="23" Margin="619,613,0,-96.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="TextBox_titiklenyapz_Copy7" HorizontalAlignment="Left" Height="23" Margin="699,613,0,-96.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="74"/>
+        <TextBox x:Name="TextBox_titiklenyapz_Copy8" HorizontalAlignment="Left" Height="23" Margin="778,613,0,-96.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="TextBox_titiklenyapz_Copy9" HorizontalAlignment="Left" Height="23" Margin="539,613,0,-96.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="TextBox_titiklenyapz_Copy10" HorizontalAlignment="Left" Height="23" Margin="858,613,0,-96.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="74"/>
+        <Grid HorizontalAlignment="Left" Height="151" VerticalAlignment="Bottom" Width="164" Background="#FFDFDFDF" Margin="980,0,0,-150.8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Raden Ichsan Nur Aldiansyah" HorizontalAlignment="Left" Margin="0,96,0,0" VerticalAlignment="Top"/>
+            <Label Content="Dian Rahmaji" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,42,0,0"/>
+            <Label Content="(17/413896/TK/46336)" HorizontalAlignment="Left" Margin="0,64,0,0" VerticalAlignment="Top"/>
+            <Label Content="(17/413915/TK/46355)" HorizontalAlignment="Left" Margin="0,120,0,0" VerticalAlignment="Top"/>
+            <Label Content="Kelompok:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,7,0,0"/>
+        </Grid>
+        <TextBox x:Name="TextBox_titiklenyapz_Copy11" HorizontalAlignment="Left" Height="23" Margin="619,641,0,-124.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="TextBox_titiklenyapz_Copy12" HorizontalAlignment="Left" Height="23" Margin="699,641,0,-124.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="74"/>
+        <TextBox x:Name="TextBox_titiklenyapz_Copy13" HorizontalAlignment="Left" Height="23" Margin="539,641,0,-124.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="TextBox_titiklenyapz_Copy14" HorizontalAlignment="Left" Height="23" Margin="778,641,0,-124.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="TextBox_titiklenyapz_Copy15" HorizontalAlignment="Left" Height="23" Margin="858,641,0,-124.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="74"/>
     </Grid>
 </Window>
