@@ -50,10 +50,33 @@ namespace Projection
                 new Point3D(0,0,0),
                 new Point3D(0,0,0)
         };
+        Point3D[] titik2 = new Point3D[14] {
+                new Point3D(0,0,0),
+                new Point3D(0,0,0),
+                new Point3D(0,0,0),
+                new Point3D(0,0,0),
+                new Point3D(0,0,0),
+                new Point3D(0,0,0),
+                new Point3D(0,0,0),
+                new Point3D(0,0,0),
+                new Point3D(0,0,0),
+                new Point3D(0,0,0),
+                new Point3D(0,0,0),
+                new Point3D(0,0,0),
+                new Point3D(0,0,0),
+                new Point3D(0,0,0)
+        };
         public MainWindow()
         {
             InitializeComponent();
             gambarsumbu();
+            TextBox_panjangrumahx.TextChanged += TextBox_panjangrumahx_TextChanged;
+            TextBox_panjangrumahy.TextChanged += TextBox_panjangrumahy_TextChanged;
+            TextBox_panjangrumahz.TextChanged += TextBox_panjangrumahz_TextChanged;
+            TextBox_posisiobjekx.TextChanged += TextBox_posisiobjekx_TextChanged;
+            TextBox_posisiobjeky.TextChanged += TextBox_posisiobjeky_TextChanged;
+            TextBox_posisiobjekz.TextChanged += TextBox_posisiobjekz_TextChanged;
+            TextBox_titiklenyapz.TextChanged += TextBox_titiklenyapz_TextChanged;
         }
         private void koordinatrumah(double x, double y, double z, double px, double py, double pz)
         {
@@ -161,6 +184,33 @@ namespace Projection
             objects.Children.Add(sumbu);
             placedobjects.Content = objects;
         }
+        private void gambarproyeksi()
+        {
+            var tembokrumah = new MeshBuilder(false, false);
+            var ataprumah = new MeshBuilder(false, false);
+            tembokrumah.AddBox(new Point3D((titik2[0].X + titik2[2].X) / 2, (titik2[0].Y + titik2[2].Y) / 2, (titik2[0].Z + titik2[2].Z) / 2), (titik2[2].X - titik2[0].X), (titik2[2].Y - titik2[0].Y), (titik2[2].Z - titik2[0].Z));
+            tembokrumah.AddBox(new Point3D((titik2[0].X + titik2[5].X) / 2, (titik2[0].Y + titik2[5].Y) / 2, (titik2[0].Z + titik2[5].Z) / 2), (titik2[5].X - titik2[0].X), (titik2[5].Y - titik2[0].Y), (titik2[5].Z - titik2[0].Z));
+            tembokrumah.AddBox(new Point3D((titik2[1].X + titik2[6].X) / 2, (titik2[1].Y + titik2[6].Y) / 2, (titik2[1].Z + titik2[6].Z) / 2), (titik2[6].X - titik2[1].X), (titik2[6].Y - titik2[1].Y), (titik2[6].Z - titik2[1].Z));
+            tembokrumah.AddBox(new Point3D((titik2[2].X + titik2[7].X) / 2, (titik2[2].Y + titik2[7].Y) / 2, (titik2[2].Z + titik2[7].Z) / 2), (titik2[2].X - titik2[7].X), (titik2[7].Y - titik2[2].Y), (titik2[7].Z - titik2[2].Z));
+            tembokrumah.AddBox(new Point3D((titik2[3].X + titik2[4].X) / 2, (titik2[3].Y + titik2[4].Y) / 2, (titik2[3].Z + titik2[4].Z) / 2), (titik2[4].X - titik2[3].X), (titik2[4].Y - titik2[3].Y), (titik2[4].Z - titik2[3].Z));
+            ataprumah.AddTriangle(titik2[4], titik2[5], titik2[8]);
+            ataprumah.AddTriangle(titik2[6], titik2[7], titik2[9]);
+            ataprumah.AddTriangle(titik2[5], titik2[6], titik2[8]);
+            ataprumah.AddTriangle(titik2[7], titik2[4], titik2[8]);
+            ataprumah.AddTriangle(titik2[9], titik2[8], titik2[6]);
+            ataprumah.AddTriangle(titik2[8], titik2[9], titik2[7]);
+            objects.Children.Add(new GeometryModel3D
+            {
+                Geometry = tembokrumah.ToMesh(true),
+                Material = MaterialHelper.CreateMaterial(Colors.DarkGray)
+            });
+            objects.Children.Add(new GeometryModel3D
+            {
+                Geometry = ataprumah.ToMesh(true),
+                Material = MaterialHelper.CreateMaterial(Colors.DarkGray)
+            });
+            placedobjects.Content = objects;
+        }
         private void resetmatrikstransform()
         {
             for (int i = 0; i < 4; i++)
@@ -191,13 +241,12 @@ namespace Projection
                     tempz += (matriks[2, i] * matriks2[i, 0]);
                     temp4 += (matriks[3, i] * matriks2[i, 0]);
                 }
-                titik[h].X = Math.Round(tempx, 4) / temp4;
-                titik[h].Y = Math.Round(tempy, 4) / temp4;
-                titik[h].Z = Math.Round(tempz, 4) / temp4;
+                titik2[h].X = Math.Round(tempx, 4) / temp4;
+                titik2[h].Y = Math.Round(tempy, 4) / temp4;
+                titik2[h].Z = Math.Round(tempz, 4) / temp4;
             }
             resetmatrikstransform();
-            gambarrumah();
-            updateposisi();
+            gambarproyeksi();
         }
         private void updateposisi()
         {
@@ -216,13 +265,12 @@ namespace Projection
             TextBox_titik13.Text = titik[12].ToString();
             TextBox_titik14.Text = titik[13].ToString();
         }
-        private void Button_buatobjek_Click(object sender, RoutedEventArgs e)
+        private void execute()
         {
             koordinatrumah(Convert.ToDouble(TextBox_posisiobjekx.Text), Convert.ToDouble(TextBox_posisiobjeky.Text), Convert.ToDouble(TextBox_posisiobjekz.Text), Convert.ToDouble(TextBox_panjangrumahx.Text), Convert.ToDouble(TextBox_panjangrumahy.Text), Convert.ToDouble(TextBox_panjangrumahz.Text));
-            TextBox_posisilantai.Text = TextBox_posisiobjekz.Text;
+            proyeksi();
         }
-
-        private void Button_ubahposisi_Click(object sender, RoutedEventArgs e)
+        private void proyeksi()
         {
             resetmatrikstransform();
             matriks[0, 0] = 1;
@@ -230,6 +278,44 @@ namespace Projection
             matriks[3, 3] = 1;
             matriks[3, 2] = 1 / (Convert.ToDouble(TextBox_titiklenyapz.Text) * -1);
             perkalianmatriks();
+        }
+        private void Button_buatobjek_Click(object sender, RoutedEventArgs e)
+        {
+            execute();
+        }
+        private void TextBox_titiklenyapz_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            execute();
+        }
+
+        private void TextBox_posisiobjekx_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            execute();
+        }
+
+        private void TextBox_posisiobjeky_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            execute();
+        }
+
+        private void TextBox_posisiobjekz_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            execute();
+        }
+
+        private void TextBox_panjangrumahx_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            execute();
+        }
+
+        private void TextBox_panjangrumahy_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            execute();
+        }
+
+        private void TextBox_panjangrumahz_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            execute();
         }
     }
 }

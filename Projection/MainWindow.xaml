@@ -6,7 +6,7 @@
         xmlns:h="http://helix-toolkit.org/wpf"
         xmlns:local="clr-namespace:Projection"
         mc:Ignorable="d"
-        Title="Proyeksi 1 Titik Lenyap" Width="1150" Height="720" >
+        Title="Proyeksi 1 Titik" Width="1150" Height="720" >
 
     <Grid VerticalAlignment="Top">
         <Grid>
@@ -18,36 +18,23 @@
                 <h:GridLinesVisual3D Width="200" Length="200" MinorDistance="1" MajorDistance="1" Thickness="0.01"/>
             </h:HelixViewport3D>
         </Grid>
-        <TextBox x:Name="TextBox_titiklenyapz" HorizontalAlignment="Left" Height="23" Margin="217,557,0,-40.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
-        <Label Content="Posisi Titik lenyap (z):" HorizontalAlignment="Left" Margin="11,554,0,-40.8" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBox_titiklenyapz" HorizontalAlignment="Left" Height="23" Margin="217,557,0,-40.8" TextWrapping="Wrap" Text="-5" VerticalAlignment="Top" Width="37"/>
+        <Label Content="Posisi Titik proyeksi (z):" HorizontalAlignment="Left" Margin="11,554,0,-40.8" VerticalAlignment="Top"/>
         <Label Content="Posisi titik pusat lantai rumah:" HorizontalAlignment="Left" Margin="11,582,0,-68.8" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBox_posisiobjekz" HorizontalAlignment="Left" Height="23" Margin="349,585,0,-68.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <TextBox x:Name="TextBox_posisiobjekz" HorizontalAlignment="Left" Height="23" Margin="349,585,0,-68.8" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="37"/>
         <Label Content="Z:" HorizontalAlignment="Left" Margin="325,582,0,-68.8" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBox_posisiobjeky" HorizontalAlignment="Left" Height="23" Margin="283,585,0,-68.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <TextBox x:Name="TextBox_posisiobjeky" HorizontalAlignment="Left" Height="23" Margin="283,585,0,-68.8" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="37"/>
         <Label Content="Y:" HorizontalAlignment="Left" Margin="259,582,0,-68.8" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBox_posisiobjekx" HorizontalAlignment="Left" Height="23" Margin="217,585,0,-68.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <TextBox x:Name="TextBox_posisiobjekx" HorizontalAlignment="Left" Height="23" Margin="217,585,0,-68.8" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="37"/>
         <Label Content="X:" HorizontalAlignment="Left" Margin="193,582,0,-68.8" VerticalAlignment="Top"/>
         <Button x:Name="Button_buatobjek" Content="Buat Objek" HorizontalAlignment="Left" Margin="11,644,0,-135.8" VerticalAlignment="Top" Width="95" Click="Button_buatobjek_Click" Height="31"/>
-        <TextBox x:Name="TextBox_panjangrumahx" HorizontalAlignment="Left" Height="23" Margin="217,613,0,-96.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <TextBox x:Name="TextBox_panjangrumahx" HorizontalAlignment="Left" Height="23" Margin="217,613,0,-96.8" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="37" />
         <Label Content="Panjang sisi rumah:" HorizontalAlignment="Left" Margin="11,610,0,-96.8" VerticalAlignment="Top"/>
         <Label Content="Y:" HorizontalAlignment="Left" Margin="259,610,0,-96.8" VerticalAlignment="Top"/>
         <Label Content="X:" HorizontalAlignment="Left" Margin="193,610,0,-96.8" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBox_panjangrumahy" HorizontalAlignment="Left" Height="23" Margin="283,613,0,-96.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
-        <TextBox x:Name="TextBox_panjangrumahz" HorizontalAlignment="Left" Height="23" Margin="349,613,0,-96.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
+        <TextBox x:Name="TextBox_panjangrumahy" HorizontalAlignment="Left" Height="23" Margin="283,613,0,-96.8" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="37" />
+        <TextBox x:Name="TextBox_panjangrumahz" HorizontalAlignment="Left" Height="23" Margin="349,613,0,-96.8" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="37" />
         <Label Content="Z:" HorizontalAlignment="Left" Margin="325,610,0,-96.8" VerticalAlignment="Top"/>
-        <Separator HorizontalAlignment="Left" Height="1" Margin="328,615,0,-76.8" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5">
-            <Separator.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Separator.RenderTransform>
-        </Separator>
-        <TextBox x:Name="TextBox_posisilantai" HorizontalAlignment="Left" Height="23" Margin="444,585,0,-68.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="37"/>
-        <Label Content="Posisi lantai (z):" HorizontalAlignment="Left" Margin="414,549,0,-35.8" VerticalAlignment="Top"/>
-        <Button x:Name="Button_ubahposisi" Content="Ubah Posisi" HorizontalAlignment="Left" Margin="414,616,0,-107.8" VerticalAlignment="Top" Width="95" Click="Button_ubahposisi_Click" Height="31"/>
         <Separator HorizontalAlignment="Left" Height="1" Margin="443,615,0,-76.8" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5">
             <Separator.RenderTransform>
                 <TransformGroup>
@@ -74,7 +61,7 @@
         <TextBox x:Name="TextBox_titik13" HorizontalAlignment="Left" Height="23" Margin="539,641,0,-124.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="75" IsReadOnly="True"/>
         <TextBox x:Name="TextBox_titik14" HorizontalAlignment="Left" Height="23" Margin="778,641,0,-124.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="75" IsReadOnly="True"/>
         <TextBox x:Name="TextBox_titik15" HorizontalAlignment="Left" Height="23" Margin="858,641,0,-124.8" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="74" IsReadOnly="True"/>
-        <Grid HorizontalAlignment="Left" Height="151" VerticalAlignment="Bottom" Width="164" Background="#FFDFDFDF" Margin="980,0,0,-150.8">
+        <Grid Height="151" VerticalAlignment="Bottom" Background="#FFDFDFDF" Margin="970,0,0,-150.8">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
