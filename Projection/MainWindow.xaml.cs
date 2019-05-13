@@ -54,7 +54,6 @@ namespace Projection
         {
             InitializeComponent();
             gambarsumbu();
-            koordinatrumah(2, 2, 2, 4, 4, 4);
         }
         private void koordinatrumah(double x, double y, double z, double px, double py, double pz)
         {
@@ -101,6 +100,7 @@ namespace Projection
         }
         private void gambarrumah()
         {
+            objects.Children.Clear();
             var kerangkarumah = new MeshBuilder(false, false);
             var tembokrumah = new MeshBuilder(false, false);
             var ataprumah = new MeshBuilder(false, false);
@@ -150,13 +150,6 @@ namespace Projection
                 Geometry = ataprumah.ToMesh(true),
                 Material = MaterialHelper.CreateMaterial(Colors.SaddleBrown)
             });
-            placedobjects.Children.Clear();
-            objects.Children.Add(sumbu);
-            placedobjects.Content = objects;
-        }
-
-        private void Button_buatobjek_Click(object sender, RoutedEventArgs e)
-        {
             var titiklenyap = new MeshBuilder(false, false);
             titiklenyap.AddEllipsoid(new Point3D(0, 0, Convert.ToDouble(TextBox_titiklenyapz.Text)), 0.2, 0.2, 0.2);
             objects.Children.Add(new GeometryModel3D
@@ -164,12 +157,79 @@ namespace Projection
                 Geometry = titiklenyap.ToMesh(true),
                 Material = MaterialHelper.CreateMaterial(Colors.Yellow)
             });
+            placedobjects.Children.Clear();
+            objects.Children.Add(sumbu);
+            placedobjects.Content = objects;
+        }
+        private void resetmatrikstransform()
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    matriks[i, j] = 0;
+                }
+            }
+        }
+        private void perkalianmatriks()
+        {
+            double tempx, tempy, tempz, temp4;
+            for (int h = 0; h < 14; h++)
+            {
+                double[,] matriks2 = new double[,]
+                {
+                    {titik[h].X},{titik[h].Y},{titik[h].Z},{1}
+                };
+                tempx = 0;
+                tempy = 0;
+                tempz = 0;
+                temp4 = 0;
+                for (int i = 0; i < 4; i++)
+                {
+                    tempx += (matriks[0, i] * matriks2[i, 0]);
+                    tempy += (matriks[1, i] * matriks2[i, 0]);
+                    tempz += (matriks[2, i] * matriks2[i, 0]);
+                    temp4 += (matriks[3, i] * matriks2[i, 0]);
+                }
+                titik[h].X = Math.Round(tempx, 4) / temp4;
+                titik[h].Y = Math.Round(tempy, 4) / temp4;
+                titik[h].Z = Math.Round(tempz, 4) / temp4;
+            }
+            resetmatrikstransform();
+            gambarrumah();
+            updateposisi();
+        }
+        private void updateposisi()
+        {
+            TextBox_titik1.Text = titik[0].ToString();
+            TextBox_titik2.Text = titik[1].ToString();
+            TextBox_titik3.Text = titik[2].ToString();
+            TextBox_titik4.Text = titik[3].ToString();
+            TextBox_titik5.Text = titik[4].ToString();
+            TextBox_titik6.Text = titik[5].ToString();
+            TextBox_titik7.Text = titik[6].ToString();
+            TextBox_titik8.Text = titik[7].ToString();
+            TextBox_titik9.Text = titik[8].ToString();
+            TextBox_titik10.Text = titik[9].ToString();
+            TextBox_titik11.Text = titik[10].ToString();
+            TextBox_titik12.Text = titik[11].ToString();
+            TextBox_titik13.Text = titik[12].ToString();
+            TextBox_titik14.Text = titik[13].ToString();
+        }
+        private void Button_buatobjek_Click(object sender, RoutedEventArgs e)
+        {
             koordinatrumah(Convert.ToDouble(TextBox_posisiobjekx.Text), Convert.ToDouble(TextBox_posisiobjeky.Text), Convert.ToDouble(TextBox_posisiobjekz.Text), Convert.ToDouble(TextBox_panjangrumahx.Text), Convert.ToDouble(TextBox_panjangrumahy.Text), Convert.ToDouble(TextBox_panjangrumahz.Text));
+            TextBox_posisilantai.Text = TextBox_posisiobjekz.Text;
         }
 
         private void Button_ubahposisi_Click(object sender, RoutedEventArgs e)
         {
-
+            resetmatrikstransform();
+            matriks[0, 0] = 1;
+            matriks[1, 1] = 1;
+            matriks[3, 3] = 1;
+            matriks[3, 2] = 1 / (Convert.ToDouble(TextBox_titiklenyapz.Text) * -1);
+            perkalianmatriks();
         }
     }
 }
