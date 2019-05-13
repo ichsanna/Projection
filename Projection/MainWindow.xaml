@@ -6,7 +6,7 @@
         xmlns:h="http://helix-toolkit.org/wpf"
         xmlns:local="clr-namespace:Projection"
         mc:Ignorable="d"
-        Title="3D Transformation" Width="960" Height="720" >
+        Title="Proyeksi 1 Titik Lenyap" Width="960" Height="720" >
 
     <Grid VerticalAlignment="Top">
         <Grid>
