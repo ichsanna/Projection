@@ -34,7 +34,11 @@ namespace Projection
             {0,0,0,0},
             {0,0,0,0}
         };
-        Point3D[] titik = new Point3D[14] {
+        Point3D[] titik = new Point3D[18] {
+                new Point3D(0,0,0),
+                new Point3D(0,0,0),
+                new Point3D(0,0,0),
+                new Point3D(0,0,0),
                 new Point3D(0,0,0),
                 new Point3D(0,0,0),
                 new Point3D(0,0,0),
@@ -50,11 +54,7 @@ namespace Projection
                 new Point3D(0,0,0),
                 new Point3D(0,0,0)
         };
-        Point3D[] titik2 = new Point3D[14] {
-                new Point3D(0,0,0),
-                new Point3D(0,0,0),
-                new Point3D(0,0,0),
-                new Point3D(0,0,0),
+        Point3D[] titik2 = new Point3D[10] {
                 new Point3D(0,0,0),
                 new Point3D(0,0,0),
                 new Point3D(0,0,0),
@@ -94,6 +94,10 @@ namespace Projection
             titik[11] = new Point3D(x + (px / 6), y - (py / 2), z + (pz / 3));
             titik[12] = new Point3D(x + (px / 3), y - (py / 2), z + (pz / 3));
             titik[13] = new Point3D(x + (px / 3), y - (py / 2), z);
+            titik[14] = new Point3D(x - (px / 3), y - (py / 2), z + (pz / 6));
+            titik[15] = new Point3D(x - (px / 3), y - (py / 2), z + (pz / 3));
+            titik[16] = new Point3D(x, y - (py / 2), z + (pz / 3));
+            titik[17] = new Point3D(x, y - (py / 2), z + (pz / 6));
             gambarrumah();
         }
         private void gambarsumbu()
@@ -127,26 +131,30 @@ namespace Projection
             var kerangkarumah = new MeshBuilder(false, false);
             var tembokrumah = new MeshBuilder(false, false);
             var ataprumah = new MeshBuilder(false, false);
-            kerangkarumah.AddPipe(titik[0], titik[1], 0, 0.2, 90);
-            kerangkarumah.AddPipe(titik[1], titik[2], 0, 0.2, 90);
-            kerangkarumah.AddPipe(titik[2], titik[3], 0, 0.2, 90);
-            kerangkarumah.AddPipe(titik[3], titik[0], 0, 0.2, 90);
-            kerangkarumah.AddPipe(titik[4], titik[5], 0, 0.2, 90);
-            kerangkarumah.AddPipe(titik[5], titik[6], 0, 0.2, 90);
-            kerangkarumah.AddPipe(titik[6], titik[7], 0, 0.2, 90);
-            kerangkarumah.AddPipe(titik[7], titik[4], 0, 0.2, 90);
-            kerangkarumah.AddPipe(titik[0], titik[4], 0, 0.2, 90);
-            kerangkarumah.AddPipe(titik[1], titik[5], 0, 0.2, 90);
-            kerangkarumah.AddPipe(titik[2], titik[6], 0, 0.2, 90);
-            kerangkarumah.AddPipe(titik[3], titik[7], 0, 0.2, 90);
-            kerangkarumah.AddPipe(titik[4], titik[8], 0, 0.2, 90);
-            kerangkarumah.AddPipe(titik[5], titik[8], 0, 0.2, 90);
-            kerangkarumah.AddPipe(titik[6], titik[9], 0, 0.2, 90);
-            kerangkarumah.AddPipe(titik[7], titik[9], 0, 0.2, 90);
-            kerangkarumah.AddPipe(titik[9], titik[8], 0, 0.2, 90);
-            kerangkarumah.AddPipe(titik[10], titik[11], 0, 0.2, 90);
-            kerangkarumah.AddPipe(titik[11], titik[12], 0, 0.2, 90);
-            kerangkarumah.AddPipe(titik[12], titik[13], 0, 0.2, 90);
+            kerangkarumah.AddPipe(titik[0], titik[1], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[1], titik[2], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[2], titik[3], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[3], titik[0], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[4], titik[5], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[5], titik[6], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[6], titik[7], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[7], titik[4], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[0], titik[4], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[1], titik[5], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[2], titik[6], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[3], titik[7], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[4], titik[8], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[5], titik[8], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[6], titik[9], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[7], titik[9], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[9], titik[8], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[10], titik[11], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[11], titik[12], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[12], titik[13], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[14], titik[15], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[15], titik[16], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[16], titik[17], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[17], titik[14], 0, 0.1, 90);
             tembokrumah.AddBox(new Point3D((titik[0].X + titik[2].X) / 2, (titik[0].Y + titik[2].Y) / 2, (titik[0].Z + titik[2].Z) / 2), (titik[2].X - titik[0].X), (titik[2].Y - titik[0].Y), (titik[2].Z - titik[0].Z));
             tembokrumah.AddBox(new Point3D((titik[0].X + titik[5].X) / 2, (titik[0].Y + titik[5].Y) / 2, (titik[0].Z + titik[5].Z) / 2), (titik[5].X - titik[0].X), (titik[5].Y - titik[0].Y), (titik[5].Z - titik[0].Z));
             tembokrumah.AddBox(new Point3D((titik[1].X + titik[6].X) / 2, (titik[1].Y + titik[6].Y) / 2, (titik[1].Z + titik[6].Z) / 2), (titik[6].X - titik[1].X), (titik[6].Y - titik[1].Y), (titik[6].Z - titik[1].Z));
@@ -188,10 +196,11 @@ namespace Projection
         {
             var tembokrumah = new MeshBuilder(false, false);
             var ataprumah = new MeshBuilder(false, false);
+            var garisproyeksi = new MeshBuilder(false, false);
             tembokrumah.AddBox(new Point3D((titik2[0].X + titik2[2].X) / 2, (titik2[0].Y + titik2[2].Y) / 2, (titik2[0].Z + titik2[2].Z) / 2), (titik2[2].X - titik2[0].X), (titik2[2].Y - titik2[0].Y), (titik2[2].Z - titik2[0].Z));
             tembokrumah.AddBox(new Point3D((titik2[0].X + titik2[5].X) / 2, (titik2[0].Y + titik2[5].Y) / 2, (titik2[0].Z + titik2[5].Z) / 2), (titik2[5].X - titik2[0].X), (titik2[5].Y - titik2[0].Y), (titik2[5].Z - titik2[0].Z));
             tembokrumah.AddBox(new Point3D((titik2[1].X + titik2[6].X) / 2, (titik2[1].Y + titik2[6].Y) / 2, (titik2[1].Z + titik2[6].Z) / 2), (titik2[6].X - titik2[1].X), (titik2[6].Y - titik2[1].Y), (titik2[6].Z - titik2[1].Z));
-            tembokrumah.AddBox(new Point3D((titik2[2].X + titik2[7].X) / 2, (titik2[2].Y + titik2[7].Y) / 2, (titik2[2].Z + titik2[7].Z) / 2), (titik2[2].X - titik2[7].X), (titik2[7].Y - titik2[2].Y), (titik2[7].Z - titik2[2].Z));
+            tembokrumah.AddBox(new Point3D((titik2[2].X + titik2[7].X) / 2, (titik2[2].Y + titik2[7].Y) / 2, (titik2[2].Z + titik2[7].Z) / 2), (titik2[7].X - titik2[2].X), (titik2[7].Y - titik2[2].Y), (titik2[7].Z - titik2[2].Z));
             tembokrumah.AddBox(new Point3D((titik2[3].X + titik2[4].X) / 2, (titik2[3].Y + titik2[4].Y) / 2, (titik2[3].Z + titik2[4].Z) / 2), (titik2[4].X - titik2[3].X), (titik2[4].Y - titik2[3].Y), (titik2[4].Z - titik2[3].Z));
             ataprumah.AddTriangle(titik2[4], titik2[5], titik2[8]);
             ataprumah.AddTriangle(titik2[6], titik2[7], titik2[9]);
@@ -199,6 +208,22 @@ namespace Projection
             ataprumah.AddTriangle(titik2[7], titik2[4], titik2[8]);
             ataprumah.AddTriangle(titik2[9], titik2[8], titik2[6]);
             ataprumah.AddTriangle(titik2[8], titik2[9], titik2[7]);
+            var titikproyeksi = new Point3D(0, 0, Convert.ToDouble(TextBox_titiklenyapz.Text));
+            garisproyeksi.AddPipe(titikproyeksi, titik[0], 0, 0.02, 90);
+            garisproyeksi.AddPipe(titikproyeksi, titik[1], 0, 0.02, 90);
+            garisproyeksi.AddPipe(titikproyeksi, titik[2], 0, 0.02, 90);
+            garisproyeksi.AddPipe(titikproyeksi, titik[3], 0, 0.02, 90);
+            garisproyeksi.AddPipe(titikproyeksi, titik[4], 0, 0.02, 90);
+            garisproyeksi.AddPipe(titikproyeksi, titik[5], 0, 0.02, 90);
+            garisproyeksi.AddPipe(titikproyeksi, titik[6], 0, 0.02, 90);
+            garisproyeksi.AddPipe(titikproyeksi, titik[7], 0, 0.02, 90);
+            garisproyeksi.AddPipe(titikproyeksi, titik[8], 0, 0.02, 90);
+            garisproyeksi.AddPipe(titikproyeksi, titik[9], 0, 0.02, 90);
+            objects.Children.Add(new GeometryModel3D
+            {
+                Geometry = garisproyeksi.ToMesh(true),
+                Material = MaterialHelper.CreateMaterial(Colors.Yellow)
+            });
             objects.Children.Add(new GeometryModel3D
             {
                 Geometry = tembokrumah.ToMesh(true),
@@ -224,7 +249,7 @@ namespace Projection
         private void perkalianmatriks()
         {
             double tempx, tempy, tempz, temp4;
-            for (int h = 0; h < 14; h++)
+            for (int h = 0; h < 10; h++)
             {
                 double[,] matriks2 = new double[,]
                 {
@@ -241,29 +266,26 @@ namespace Projection
                     tempz += (matriks[2, i] * matriks2[i, 0]);
                     temp4 += (matriks[3, i] * matriks2[i, 0]);
                 }
-                titik2[h].X = Math.Round(tempx, 4) / temp4;
-                titik2[h].Y = Math.Round(tempy, 4) / temp4;
-                titik2[h].Z = Math.Round(tempz, 4) / temp4;
+                titik2[h].X = Math.Round(tempx / temp4,4);
+                titik2[h].Y = Math.Round(tempy / temp4,4);
+                titik2[h].Z = Math.Round(tempz / temp4,4);
             }
             resetmatrikstransform();
+            updateposisi();
             gambarproyeksi();
         }
         private void updateposisi()
         {
-            TextBox_titik1.Text = titik[0].ToString();
-            TextBox_titik2.Text = titik[1].ToString();
-            TextBox_titik3.Text = titik[2].ToString();
-            TextBox_titik4.Text = titik[3].ToString();
-            TextBox_titik5.Text = titik[4].ToString();
-            TextBox_titik6.Text = titik[5].ToString();
-            TextBox_titik7.Text = titik[6].ToString();
-            TextBox_titik8.Text = titik[7].ToString();
-            TextBox_titik9.Text = titik[8].ToString();
-            TextBox_titik10.Text = titik[9].ToString();
-            TextBox_titik11.Text = titik[10].ToString();
-            TextBox_titik12.Text = titik[11].ToString();
-            TextBox_titik13.Text = titik[12].ToString();
-            TextBox_titik14.Text = titik[13].ToString();
+            Label_titik1.Content = titik2[0].ToString();
+            Label_titik2.Content = titik2[1].ToString();
+            Label_titik3.Content = titik2[2].ToString();
+            Label_titik4.Content = titik2[3].ToString();
+            Label_titik5.Content = titik2[4].ToString();
+            Label_titik6.Content = titik2[5].ToString();
+            Label_titik7.Content = titik2[6].ToString();
+            Label_titik8.Content = titik2[7].ToString();
+            Label_titik9.Content = titik2[8].ToString();
+            Label_titik10.Content = titik2[9].ToString();
         }
         private void execute()
         {
@@ -285,37 +307,58 @@ namespace Projection
         }
         private void TextBox_titiklenyapz_TextChanged(object sender, TextChangedEventArgs e)
         {
-            execute();
+            if (int.TryParse(TextBox_titiklenyapz.Text, out int n))
+            {
+                execute();
+            }
         }
 
         private void TextBox_posisiobjekx_TextChanged(object sender, TextChangedEventArgs e)
         {
-            execute();
+            if (int.TryParse(TextBox_posisiobjekx.Text, out int n))
+            {
+                execute();
+            }
         }
 
         private void TextBox_posisiobjeky_TextChanged(object sender, TextChangedEventArgs e)
         {
-            execute();
+            if (int.TryParse(TextBox_posisiobjeky.Text, out int n))
+            {
+                execute();
+            }
         }
 
         private void TextBox_posisiobjekz_TextChanged(object sender, TextChangedEventArgs e)
         {
-            execute();
+            if (int.TryParse(TextBox_posisiobjekz.Text, out int n))
+            {
+                execute();
+            }
         }
 
         private void TextBox_panjangrumahx_TextChanged(object sender, TextChangedEventArgs e)
         {
-            execute();
+            if (int.TryParse(TextBox_panjangrumahx.Text, out int n))
+            {
+                if (n > 0) execute();
+            }
         }
 
         private void TextBox_panjangrumahy_TextChanged(object sender, TextChangedEventArgs e)
         {
-            execute();
+            if (int.TryParse(TextBox_panjangrumahy.Text, out int n))
+            {
+                if (n>0) execute();
+            }
         }
 
         private void TextBox_panjangrumahz_TextChanged(object sender, TextChangedEventArgs e)
         {
-            execute();
+            if (int.TryParse(TextBox_panjangrumahz.Text, out int n))
+            {
+                if (n > 0) execute();
+            }
         }
     }
 }
