@@ -27,7 +27,6 @@
         <Label Content="Y:" HorizontalAlignment="Left" Margin="259,582,0,-68.8" VerticalAlignment="Top"/>
         <TextBox x:Name="TextBox_posisiobjekx" HorizontalAlignment="Left" Height="23" Margin="217,585,0,-68.8" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="37"/>
         <Label Content="X:" HorizontalAlignment="Left" Margin="193,582,0,-68.8" VerticalAlignment="Top"/>
-        <Button x:Name="Button_buatobjek" Content="Buat Objek" HorizontalAlignment="Left" Margin="11,644,0,-135.8" VerticalAlignment="Top" Width="95" Click="Button_buatobjek_Click" Height="31"/>
         <TextBox x:Name="TextBox_panjangrumahx" HorizontalAlignment="Left" Height="23" Margin="217,613,0,-96.8" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="37" />
         <Label Content="Panjang sisi rumah:" HorizontalAlignment="Left" Margin="11,610,0,-96.8" VerticalAlignment="Top"/>
         <Label Content="Y:" HorizontalAlignment="Left" Margin="259,610,0,-96.8" VerticalAlignment="Top"/>
@@ -56,11 +55,6 @@
         <Label x:Name="Label_titik8" HorizontalAlignment="Left" Height="23" Margin="726,613,0,-96.8" Content="0" VerticalAlignment="Top"/>
         <Label x:Name="Label_titik9" HorizontalAlignment="Left" Height="23" Margin="427,613,0,-96.8" Content="0" VerticalAlignment="Top"/>
         <Label x:Name="Label_titik10" HorizontalAlignment="Left" Height="23" Margin="826,613,0,-96.8" Content="0" VerticalAlignment="Top"/>
-        <Label x:Name="Label_titik11" HorizontalAlignment="Left" Height="23" Margin="527,641,0,-124.8" Content="0" VerticalAlignment="Top"/>
-        <Label x:Name="Label_titik12" HorizontalAlignment="Left" Height="23" Margin="627,641,0,-124.8" Content="0" VerticalAlignment="Top"/>
-        <Label x:Name="Label_titik13" HorizontalAlignment="Left" Height="23" Margin="427,641,0,-124.8" Content="0" VerticalAlignment="Top"/>
-        <Label x:Name="Label_titik14" HorizontalAlignment="Left" Height="23" Margin="726,641,0,-124.8" Content="0" VerticalAlignment="Top"/>
-        <Label x:Name="Label_titik15" HorizontalAlignment="Left" Height="23" Margin="826,641,0,-124.8" Content="0" VerticalAlignment="Top"/>
         <Grid Height="151" VerticalAlignment="Bottom" Background="#FFDFDFDF" Margin="970,0,0,-150.8">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

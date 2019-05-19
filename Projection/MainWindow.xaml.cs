@@ -79,6 +79,7 @@ namespace Projection
             TextBox_posisiobjeky.TextChanged += TextBox_posisiobjeky_TextChanged;
             TextBox_posisiobjekz.TextChanged += TextBox_posisiobjekz_TextChanged;
             TextBox_titiklenyapz.TextChanged += TextBox_titiklenyapz_TextChanged;
+            execute();
         }
         private void koordinatrumah(double x, double y, double z, double px, double py, double pz)
         {
@@ -135,6 +136,8 @@ namespace Projection
             var kerangkarumah = new MeshBuilder(false, false);
             var tembokrumah = new MeshBuilder(false, false);
             var ataprumah = new MeshBuilder(false, false);
+            var jendelarumah = new MeshBuilder(false, false);
+            var pinturumah = new MeshBuilder(false, false);
             kerangkarumah.AddPipe(titik[0], titik[1], 0, 0.1, 90);
             kerangkarumah.AddPipe(titik[1], titik[2], 0, 0.1, 90);
             kerangkarumah.AddPipe(titik[2], titik[3], 0, 0.1, 90);
@@ -165,6 +168,8 @@ namespace Projection
             tembokrumah.AddBox(new Point3D((titik[1].X + titik[6].X) / 2, (titik[1].Y + titik[6].Y) / 2, (titik[1].Z + titik[6].Z) / 2), (titik[6].X - titik[1].X), (titik[6].Y - titik[1].Y), (titik[6].Z - titik[1].Z));
             tembokrumah.AddBox(new Point3D((titik[2].X + titik[7].X) / 2, (titik[2].Y + titik[7].Y) / 2, (titik[2].Z + titik[7].Z) / 2), (titik[2].X - titik[7].X), (titik[7].Y - titik[2].Y), (titik[7].Z - titik[2].Z));
             tembokrumah.AddBox(new Point3D((titik[3].X + titik[4].X) / 2, (titik[3].Y + titik[4].Y) / 2, (titik[3].Z + titik[4].Z) / 2), (titik[4].X - titik[3].X), (titik[4].Y - titik[3].Y), (titik[4].Z - titik[3].Z));
+            jendelarumah.AddBox(new Point3D((titik[14].X + titik[16].X) / 2, (titik[14].Y + titik[16].Y) / 2, (titik[14].Z + titik[16].Z) / 2), (titik[16].X - titik[14].X), (titik[16].Y - titik[14].Y), (titik[16].Z - titik[14].Z));
+            pinturumah.AddBox(new Point3D((titik[10].X + titik[12].X) / 2, (titik[10].Y + titik[12].Y) / 2, (titik[10].Z + titik[12].Z) / 2), (titik[12].X - titik[10].X), (titik[12].Y - titik[10].Y), (titik[12].Z - titik[10].Z));
             ataprumah.AddTriangle(titik[4], titik[5], titik[8]);
             ataprumah.AddTriangle(titik[6], titik[7], titik[9]);
             ataprumah.AddTriangle(titik[5], titik[6], titik[8]);
@@ -179,12 +184,22 @@ namespace Projection
             objects.Children.Add(new GeometryModel3D
             {
                 Geometry = tembokrumah.ToMesh(true),
-                Material = MaterialHelper.CreateMaterial(Colors.LightBlue)
+                Material = MaterialHelper.CreateMaterial(Colors.MediumBlue)
             });
             objects.Children.Add(new GeometryModel3D
             {
                 Geometry = ataprumah.ToMesh(true),
                 Material = MaterialHelper.CreateMaterial(Colors.SaddleBrown)
+            });
+            objects.Children.Add(new GeometryModel3D
+            {
+                Geometry = jendelarumah.ToMesh(true),
+                Material = MaterialHelper.CreateMaterial(Colors.LightBlue)
+            });
+            objects.Children.Add(new GeometryModel3D
+            {
+                Geometry = pinturumah.ToMesh(true),
+                Material = MaterialHelper.CreateMaterial(Colors.SandyBrown)
             });
             var titiklenyap = new MeshBuilder(false, false);
             titiklenyap.AddEllipsoid(new Point3D(0, 0, Convert.ToDouble(TextBox_titiklenyapz.Text)), 0.2, 0.2, 0.2);
@@ -305,10 +320,6 @@ namespace Projection
             matriks[3, 3] = 1;
             matriks[3, 2] = 1 / (Convert.ToDouble(TextBox_titiklenyapz.Text) * -1);
             perkalianmatriks();
-        }
-        private void Button_buatobjek_Click(object sender, RoutedEventArgs e)
-        {
-            execute();
         }
         private void TextBox_titiklenyapz_TextChanged(object sender, TextChangedEventArgs e)
         {
