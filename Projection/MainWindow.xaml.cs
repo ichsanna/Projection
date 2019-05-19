@@ -34,7 +34,9 @@ namespace Projection
             {0,0,0,0},
             {0,0,0,0}
         };
-        Point3D[] titik = new Point3D[18] {
+        Point3D[] titik = new Point3D[20] {
+                new Point3D(0,0,0),
+                new Point3D(0,0,0),
                 new Point3D(0,0,0),
                 new Point3D(0,0,0),
                 new Point3D(0,0,0),
@@ -98,6 +100,8 @@ namespace Projection
             titik[15] = new Point3D(x - (px / 3), y - (py / 2), z + (pz / 3));
             titik[16] = new Point3D(x, y - (py / 2), z + (pz / 3));
             titik[17] = new Point3D(x, y - (py / 2), z + (pz / 6));
+            titik[18] = new Point3D(x- ((px / 3)/2), y - (py / 2), z + (pz / 6));
+            titik[19] = new Point3D(x - ((px/3)/2), y - (py / 2), z + (pz / 3));
             gambarrumah();
         }
         private void gambarsumbu()
@@ -155,6 +159,7 @@ namespace Projection
             kerangkarumah.AddPipe(titik[15], titik[16], 0, 0.1, 90);
             kerangkarumah.AddPipe(titik[16], titik[17], 0, 0.1, 90);
             kerangkarumah.AddPipe(titik[17], titik[14], 0, 0.1, 90);
+            kerangkarumah.AddPipe(titik[18], titik[19], 0, 0.1, 90);
             tembokrumah.AddBox(new Point3D((titik[0].X + titik[2].X) / 2, (titik[0].Y + titik[2].Y) / 2, (titik[0].Z + titik[2].Z) / 2), (titik[2].X - titik[0].X), (titik[2].Y - titik[0].Y), (titik[2].Z - titik[0].Z));
             tembokrumah.AddBox(new Point3D((titik[0].X + titik[5].X) / 2, (titik[0].Y + titik[5].Y) / 2, (titik[0].Z + titik[5].Z) / 2), (titik[5].X - titik[0].X), (titik[5].Y - titik[0].Y), (titik[5].Z - titik[0].Z));
             tembokrumah.AddBox(new Point3D((titik[1].X + titik[6].X) / 2, (titik[1].Y + titik[6].Y) / 2, (titik[1].Z + titik[6].Z) / 2), (titik[6].X - titik[1].X), (titik[6].Y - titik[1].Y), (titik[6].Z - titik[1].Z));
